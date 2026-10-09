@@ -1,0 +1,17 @@
+#name: Executar PC Virtual
+
+on: [push, workflow_dispatch]
+
+jobs:
+  meu_pc_virtual:
+    runs-on: windows-latest # Pode ser ubuntu-latest ou macos-latest
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v4
+
+      - name: Testar comando no Windows Virtual
+        run: |
+          echo "Olá! Este código está rodando no PC virtual do GitHub."
+          ipconfig
+          
